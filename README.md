@@ -1,6 +1,4 @@
 # node_express
-# 2019-01-07
-# XHT
 # nodeJs、express、mongodb、logsJs、mongoose
 #
 │
