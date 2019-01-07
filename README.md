@@ -41,4 +41,4 @@
 # 备注：
   项目启动需先启动mongodb数据库
 # github地址：
-https://github.com/swraper/node_express_mongodb.git
+    https://github.com/swraper/node_express
