@@ -1,5 +1,5 @@
 # node_express
-# nodeJs、express、mongodb、logsJs、mongoose
+# nodeJs、express、mongodb、log4Js、mongoose
 #
 │
 
