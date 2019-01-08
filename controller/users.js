@@ -9,7 +9,6 @@ class users {
     }
     async login(req, res, next) {
         let response = JSON.parse(JSON.stringify(resBody));
-        console.log('url', response)
         //get User info
         //这里的User就是从model中获取user对象，通过global.dbHandel全局方法（这个方法在app.js中已经实现)
         var User = dbHandel.getModel('user');
@@ -44,7 +43,6 @@ class users {
     async searchFeel(req, res, next) {
         console.log('search feel ......................');
         let response = JSON.parse(JSON.stringify(resBody));
-        console.log(req.session)
 
         if (!req.session.user || !req.session.id) { 	//首先判断是否已经登录
             req.session.error = response.returnMsg = "请先登录"
