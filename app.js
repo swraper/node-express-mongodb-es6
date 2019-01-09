@@ -41,11 +41,11 @@ app.all('*', (req, res, next) => {
     }
 });
 
-app.use(session({
+app.use(session({//无论你是否使用session，都默认给你分配一把钥匙
     secret: 'passwd',
     resave: false,
     name: 'post_session',
-    saveUninitialized: true, //无论你是否使用session，都默认给你分配一把钥匙
+    saveUninitialized: true, // 是否保存未初始化的会话
     cookie: {
         maxAge: 1000 * 60 * 30,
     }

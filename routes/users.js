@@ -10,7 +10,9 @@ router.post('*', (req, res, next)=>{
 })
 
 //登录
-router.post('/login',users.login);
+router.post('/login',users.logedIn,users.login);
+//登录
+router.post('/loginReset',users.loginReset);
 //登录
 router.post('/logout',users.logout);
 // 查询文章

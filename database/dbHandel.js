@@ -9,16 +9,7 @@ for(let m in models){
 
 module.exports = {
 	getModel: function(type){
-		return _getModel(type);
-    },
-    wirteLog: async (res, req, response) => {
-        await res.send(200, response);
-        setTimeout(() => {
-            global.logger.info(' HOST:', req.headers.referer, ' req===', JSON.stringify(req.session), ' response===', JSON.stringify(response));
-        }, 10)
+		return mongoose.model(type);
     }
 };
 
-const _getModel = function(type){
-	return mongoose.model(type);
-};

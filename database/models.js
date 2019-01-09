@@ -13,5 +13,10 @@ module.exports = {
 		time:{type:String,required:true},
 		author:{type:String,required:true},
 		content:{type:String,required:true},
-	}
+    },
+    session:{
+        userName:{type:String,required:true},
+        user_id:{type:String,required:true},
+        // session:{type:String,required:true}
+    },
 };
