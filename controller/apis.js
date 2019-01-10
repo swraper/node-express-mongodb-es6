@@ -2,8 +2,8 @@ import Component from '../database/Component';
 import resBody from '../database/resBody';
 import dbHandel from '../database/dbHandel';
 
-class apis extends Component{
-    constructor(props){
+class apis extends Component {
+    constructor(props) {
         super(props);
         this.searchs = this.searchs.bind(this);
         this.searchData = this.searchData.bind(this);
@@ -14,7 +14,7 @@ class apis extends Component{
         let response = JSON.parse(JSON.stringify(resBody));
         // console.log('---------------', req.session)
         if (!req.session.user || !req.session.id) { 	//首先判断是否已经登录
-            return this.unLogin(res,req,response)				//未登录则返回登录提示
+            return this.unLogin(res, req, response)				//未登录则返回登录提示
         }
 
         if (req.session.user !== 'admin') {
@@ -32,17 +32,17 @@ class apis extends Component{
             } else {
                 response.data = doc;
                 // res.send(200, response);
-                vm.success(res,req,response);
+                vm.success(res, req, response);
             }
         });
     }
     async createFeel(req, res, next) {
         const vm = this;
         let response = JSON.parse(JSON.stringify(resBody));
-        console.log('create feel ......................');
+        // console.log('create feel ......................');
 
         if (!req.session.user || !req.session.id) { 	//首先判断是否已经登录
-            return this.unLogin(res,req,response)				//未登录则返回登录提示
+            return this.unLogin(res, req, response)				//未登录则返回登录提示
         }
 
         var User = dbHandel.getModel('feel');
@@ -60,22 +60,22 @@ class apis extends Component{
             } else {
                 response.returnMsg = '文章添加成功！';
                 response.data.doc = doc;
-                vm.success(res,req,response);
+                vm.success(res, req, response);
             }
         });
     }
-    async searchData(req,res,next){
+    async searchData(req, res, next) {
         const vm = this;
-        console.log('search----------------------------');
+        // console.log('search----------------------------');
         let response = JSON.parse(JSON.stringify(resBody));
 
         if (!req.session.user || !req.session.id) { 	//首先判断是否已经登录
-            return this.unLogin(res,req,response)				//未登录则返回登录提示
+            return this.unLogin(res, req, response)				//未登录则返回登录提示
         }
 
         var User = dbHandel.getModel('user');
         // console.log(User);
-        User.find({},(err,doc) => {
+        User.find({}, (err, doc) => {
             // console.log('123')
             if (err || !doc) {
                 response.returnMsg = '网络异常错误！';
@@ -87,7 +87,7 @@ class apis extends Component{
                 response.returnMsg = '文章查询成功！';
                 response.data.doc = doc;
             }
-            vm.success(res,req,response);
+            vm.success(res, req, response);
         })
     }
 }

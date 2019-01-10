@@ -53,8 +53,8 @@ app.use(session({//无论你是否使用session，都默认给你分配一把钥
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine("html",require("ejs").__express); // or   app.engine("html",require("ejs").renderFile);
-app.set("view engine","ejs");
+app.engine("html", require("ejs").__express); // or   app.engine("html",require("ejs").renderFile);
+app.set("view engine", "ejs");
 app.set('view engine', 'html');
 
 // app.use(logger('dev'));
