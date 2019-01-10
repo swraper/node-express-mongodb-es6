@@ -6,6 +6,8 @@ class apis extends Component{
     constructor(props){
         super(props);
         this.searchs = this.searchs.bind(this);
+        this.searchData = this.searchData.bind(this);
+        this.createFeel = this.createFeel.bind(this);
     }
     async searchs(req, res) {
         const vm = this;

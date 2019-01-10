@@ -78,7 +78,7 @@ class users extends Component{
     async logout(req, res) {
         const vm = this;
         let response = JSON.parse(JSON.stringify(resBody));
-        console.log('logout --------------------------')
+        console.log('logout -------',req.body,'-------------------')
 
         var uname = req.session.user;
         var User = dbHandel.getModel('session');
